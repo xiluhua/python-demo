@@ -40,11 +40,10 @@ class Student(base):
 # 1. 创建连接
 # demo: mysql+pymysql：//username+password@host:prot/databas
 url = 'mysql+pymysql://root:1111@localhost:3308/python01?charset=utf8'
-# engine = create_engine(url, echo=False)
 engine = create_engine(
         url,
         max_overflow = 0,  # 超过连接池大小外最多创建的连接
-        pool_size    = 10,  # 连接池大小
+        pool_size    = 10, # 连接池大小
         pool_timeout = 30  # 池中没有线程最多等待的时间，否则报错
     )
 # 创建表结构,已存在表则无需执行
