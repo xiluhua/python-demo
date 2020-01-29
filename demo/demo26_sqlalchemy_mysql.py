@@ -40,7 +40,6 @@ class Student(base):
 # 1. 创建连接
 # demo: mysql+pymysql：//username+password@host:prot/databas
 url = 'mysql+pymysql://root:1111@localhost:3308/python01?charset=utf8'
-# engine = create_engine(url, echo=False)
 engine = create_engine(
         url,
         max_overflow = 0,  # 超过连接池大小外最多创建的连接
