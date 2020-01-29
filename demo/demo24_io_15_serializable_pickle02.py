@@ -4,7 +4,7 @@
 '''
 import pickle
 
-infos = {
+stu = {
     'sid': 10,
     'sname': '张三',
     'sage': 30
@@ -12,7 +12,7 @@ infos = {
 
 # serialize 并持久化到文件
 with open(file="D:\\tmp\\test1.txt", mode="wb") as file:
-    pickle.dump(infos, file)
+    pickle.dump(infosstue)
 
 # 读取文件并 deserialize
 with open(file="D:\\tmp\\test1.txt", mode="rb") as file:

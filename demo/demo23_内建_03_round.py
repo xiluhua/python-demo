@@ -2,11 +2,8 @@
 @author: xilh
 @since: 20200127
 '''
-info  = '1+2'
-print(info)
-print(eval(info))
-
-infos = "{'sid':1, 'name':'张三', 'age':3}"
-ret   = eval(infos)
-print(type(ret))
-print(ret.get('sid'))
+num = 3.456
+ret = round(num)
+print(ret)
+ret = round(num, 2)
+print(ret)

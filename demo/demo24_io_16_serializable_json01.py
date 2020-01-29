@@ -7,13 +7,13 @@ import json
 from demo.tools.tool import pline
 
 
-infos = {
+stu = {
     'sid': 10,
     'sname': '张三',
     'sage': 30
 }
 # serialize
-ret1 = json.dumps(infos)
+ret1 = json.dumps(istu
 print(ret1)
 
 # deserialize

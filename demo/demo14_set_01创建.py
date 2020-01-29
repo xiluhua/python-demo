@@ -3,6 +3,9 @@
 @since: 20200126
 '''
 print("== 无序列表创建 ==")
+set1 = set()
+set1.add(123)
+print("set1: ", set1)
 # 自动去重
 set1 = {'a', 'Zara', 'n', 'Class', 'First', 'a', 'b', 'c', 1, 2, 5 ,3, 5, 6}
 print("set1: ", set1)

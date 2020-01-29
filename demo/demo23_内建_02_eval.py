@@ -2,8 +2,11 @@
 @author: xilh
 @since: 20200127
 '''
-num = 3.456
-ret = round(num)
-print(ret)
-ret = round(num, 2)
-print(ret)
+info  = '1+2'
+print(info)
+print(eval(info))
+
+stu = "{'sid':1, 'name':'张三', 'age':3}"
+ret   = eval(stu)
+print(type(ret))
+print(ret.get('sid'))
