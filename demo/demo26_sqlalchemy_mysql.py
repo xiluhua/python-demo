@@ -45,12 +45,10 @@ engine = create_engine(
         url,
         max_overflow = 0,  # 超过连接池大小外最多创建的连接
         pool_size    = 10,  # 连接池大小
-        pool_timeout = 30,  # 池中没有线程最多等待的时间，否则报错
-        pool_recycle = -1  # 多久之后对线程池中的线程进行一次连接的回收（重置）
+        pool_timeout = 30  # 池中没有线程最多等待的时间，否则报错
     )
 # 创建表结构,已存在表则无需执行
 # base.metadata.create_all(engine)  
-
 
 # 2. 创建与数据库的会话, class, 不是实例
 print("== 实现方式(一) ==")
@@ -68,42 +66,42 @@ session = Session()
 # over
 '''
 
-# # 3. add
-# stu = Student()
-# Student.set(stu, sid=8, sname='新增8', createTime='2014-07-15 10:25:03')
-# # 把要创建的数据对象添加到这个session里 
-# session.add(stu)  
-# # 提交，使前面修改的数据生效
-# session.commit() 
-# print("add OK")
+# 3. add
+stu = Student()
+Student.set(stu, sid=8, sname='新增8', createTime='2014-07-15 10:25:03')
+# 把要创建的数据对象添加到这个session里 
+session.add(stu)  
+# 提交，使前面修改的数据生效
+session.commit() 
+print("add OK")
  
-# # 4.1. query all
-# stu = session.query(Student).all()    
-# for row in stu:  #打印全部内容
-#     print('type(row):', type(row))
-#     print('type(row):', type(row.createTime))
-#     print(row.sid, row.sname, row.createTime)
-#     ret1 = jsonTool.toJsonString(row)
-#     print('ret1      :', ret1)
-#     print('type(ret1):', type(ret1))
-#         
-#     stu = jsonTool.toObject(Student(), ret1)
-#     print('type(stu)     :', type(stu))
-#     print('type(stu)     :', type(stu.createTime))
-#     print('stu.createTime:', stu.createTime)
-#     pline()
+# 4.1. query all
+stu = session.query(Student).all()    
+for row in stu:  #打印全部内容
+    print('type(row):', type(row))
+    print('type(row):', type(row.createTime))
+    print(row.sid, row.sname, row.createTime)
+    ret1 = jsonTool.toJsonString(row)
+    print('ret1      :', ret1)
+    print('type(ret1):', type(ret1))
+         
+    stu = jsonTool.toObject(Student(), ret1)
+    print('type(stu)     :', type(stu))
+    print('type(stu)     :', type(stu.createTime))
+    print('stu.createTime:', stu.createTime)
+    pline()
 
 # 4.2. query one    
-# row = session.query(Student).filter(Student.sid == 6).first()
-# print("query one:", jsonTool.toJsonString(row))
-# pline()
+row = session.query(Student).filter(Student.sid == 6).first()
+print("query one:", jsonTool.toJsonString(row))
+pline()
      
-# # 4.3. update
-# row.sname = '王五'
-# row.createTime = dateTool.curDatetime()
-# session.commit()
-# print("update OK")
-# pline()
+# 4.3. update
+row.sname = '王五'
+row.createTime = dateTool.curDatetime()
+session.commit()
+print("update OK")
+pline()
    
 # 4.4. delete
 session.query(Student).filter(Student.sid == 6).delete()
