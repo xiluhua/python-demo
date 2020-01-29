@@ -9,4 +9,6 @@ print("tup1[0]  : ", tup1[0])
 print("tup1[1:3]: ", tup1[1:3])
 print("tup1.index('physics'): ", tup1.index('physics'))
 print("tup1.index(1997)     : ", tup1.index(1997))
+# 报错
+print("tup1.index('123'): ", tup1.index('123'))
 

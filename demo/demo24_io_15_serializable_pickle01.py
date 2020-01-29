@@ -7,13 +7,13 @@ import pickle
 from demo.tools.tool import pline
 
 
-infos = {
+stu = {
     'sid': 10,
     'sname': '张三',
     'sage': 30
 }
 # serialize
-ret1 = pickle.dumps(infos)
+ret1 = pickle.dumps(istu
 print(ret1)
 # deserialize
 ret2 = pickle.loads(ret1)

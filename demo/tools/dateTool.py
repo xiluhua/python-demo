@@ -90,6 +90,8 @@ def dtimeDaysAfter(dtimestr,days):
     return time.strftime(DATETIME_FORMAT,daysAgoTime.timetuple())
 
 if __name__ == '__main__':
+    now = datetime.datetime.now()
+    print(type(now))
     secondStamp = curSeconds()
     print("当前秒：",secondStamp)
     milisStamp = curMilis()
@@ -102,9 +104,9 @@ if __name__ == '__main__':
     curT = curTime()
     print("当前时刻：",curT)
     
-    
     stdtime = secondsToDatetime(secondStamp)
     print("秒转时间：",stdtime)
+    print("type",type(stdtime))
     mtdtime = milisToDatetime(milisStamp)
     print("毫秒转时间：",mtdtime)
     dtimetm = datetimeToMilis(mtdtime)
