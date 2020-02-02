@@ -5,13 +5,13 @@ Created on 20200129
 import json
 from demo.tools.tool import toDict
 
-def toJsonString(obj):
+def toJsonString(obj, sort_keys = False):
     '''
     @note: convert obj to json str
     Created on 20200129
     @author: xilh
     '''
-    jsonString = json.dumps(obj, default=toDict, ensure_ascii=False)
+    jsonString = json.dumps(obj, default=toDict, ensure_ascii=False, sort_keys=sort_keys, indent=4)
     return jsonString
 
 def toObject(obj, jsonStr):

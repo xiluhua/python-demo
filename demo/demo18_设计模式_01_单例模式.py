@@ -15,6 +15,7 @@ class Singleton:
         return cls.__instance
 
     def __init__(self, num):
+        print('init...')
         self.num = num
 
 s1 = Singleton(10)

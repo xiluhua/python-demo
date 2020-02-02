@@ -17,7 +17,7 @@ def delete():
     print("delete ...")
 def update():
     print("update ...")
-@login    
+@login
 def select():
     print("select ...")
 
