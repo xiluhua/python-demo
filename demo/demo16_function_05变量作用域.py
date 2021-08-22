@@ -4,7 +4,7 @@
 '''
 print("== 变量作用域 ==")
 # 全局变量
-num = 100
+num = None
 def add(num1, num2):
     # 局部变量
     num = num1+num2

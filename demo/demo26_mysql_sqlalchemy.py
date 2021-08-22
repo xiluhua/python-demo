@@ -1,4 +1,9 @@
 '''
+sqlalchemy 得使用 1.3.24
+手动安装命令：
+pip install SQLAlchemy==1.3.24
+pip install pymysql
+
 @see: https://www.jianshu.com/p/0ad18fdd7eed
 @author: xilh
 @since: 20200129
@@ -23,9 +28,9 @@ class Student(base):
         #'schema': 'Code'    #数据库架构名
         'mysql_charset':'utf8'
     }
-    sid = Column(Integer, primary_key=True, name="SID")
-    sname = Column(String(20), name="SNAME")
-    createTime = Column(DateTime, name="CREATE_TIME")
+    sid = Column(Integer, primary_key=True, name="sid")
+    sname = Column(String(20), name="sname")
+    createTime = Column(DateTime, name="create_time")
 
     def set(self, sid, sname, createTime):
         self.sid = sid
@@ -39,7 +44,7 @@ class Student(base):
 
 # 1. 创建连接
 # demo: mysql+pymysql：//username+password@host:prot/databas
-url = 'mysql+pymysql://root:1111@localhost:3308/python01?charset=utf8'
+url = 'mysql+pymysql://root:111@192.168.181.147:3306/python01?charset=utf8'
 engine = create_engine(
         url,
         max_overflow = 0,  # 超过连接池大小外最多创建的连接
@@ -47,7 +52,7 @@ engine = create_engine(
         pool_timeout = 30  # 池中没有线程最多等待的时间，否则报错
     )
 # 创建表结构,已存在表则无需执行
-# base.metadata.create_all(engine)  
+# base.metadata.create_all(engine)
 
 # 2. 创建与数据库的会话, class, 不是实例
 print("== 实现方式(一) ==")
@@ -67,7 +72,7 @@ session = Session()
 
 # 3. add
 stu = Student()
-Student.set(stu, sid=8, sname='新增8', createTime='2014-07-15 10:25:03')
+Student.set(stu, sid=9, sname='新增9', createTime='2021-08-22 17:25:03')
 # 把要创建的数据对象添加到这个session里 
 session.add(stu)  
 # 提交，使前面修改的数据生效
@@ -91,7 +96,7 @@ for row in stu:  #打印全部内容
     pline()
 
 # 4.2. query one    
-row = session.query(Student).filter(Student.sid == 6).first()
+row = session.query(Student).filter(Student.sid == 8).first()
 print("query one:", jsonTool.toJsonString(row))
 pline()
      

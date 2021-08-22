@@ -17,7 +17,7 @@ list2 = list1[:]            # 全部复制，值一样但是地址(引用)不一
 print("list2-5:", list2)
 list2 = list1[::1]          # 全部复制，值一样但是地址(引用)不一样
 print("list2-6:", list2)
-print("值一样                      : list1 == list2,", list1 == list2)
+print("值一样: list1 == list2,", list1 == list2)
 print("地址(引用)不一样: list1 is list2,", list1 is list2)
 list2 = list1[::2]          # 间隔，取 2，4，6，8
 print("list2-7:", list2)
